@@ -1,5 +1,5 @@
 # Humans — Default Avatars
-Download the default avatars using unavatar.io and ui-avatars.com.
+This package allows downloads from multiple providers and it returns the first successful result.
 
 ## Setup
 ```bash
@@ -15,10 +15,10 @@ use Humans\Avatars\Attempt;
 use Humans\Avatars\Providers;
 
 $response = Avatars::attempt(
-    new Attempt(new Providers\Unavatar, 'jaggy@humans.ph'),
-    new Attempt(new Providers\Unavatar, 'jaggy'),
-    new Attempt(new Providers\Unavatar, 'jaggy@hey.com'),
-    new Attempt(new Providers\UiAvatars, 'Jaggy Gauran'),
+    new Providers\Unavatar('jaggy@humans.ph'),
+    new Providers\Unavatar('jaggy'),
+    new Providers\Unavatar('jaggy@hey.com'),
+    new Providers\UiAvatars('Jaggy Gauran'),
 );
 
 $response->contents;
@@ -31,11 +31,11 @@ Avatars provides two testing fakes to make testing a lot easier.
 ### Force a success with specific contents
 
 ```php
-Avatar::pass('example image content', 'gif');
+Avatars::pass('example image content', 'gif');
 ```
 
 ### Force the avatar to fail
 
 ```php
-Avatar::fail();
+Avatars::fail();
 ```
