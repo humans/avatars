@@ -7,7 +7,7 @@ namespace Humans\Avatars\Fakes;
 use Humans\Avatars\AvatarsContract;
 use Humans\Avatars\Providers;
 
-class SuccessfulAvatar implements AvatarsContract
+class SuccessfulAvatars implements AvatarsContract
 {
     public function __construct(
         private string $contents,

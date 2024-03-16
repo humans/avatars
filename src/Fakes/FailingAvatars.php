@@ -8,7 +8,7 @@ use Humans\Avatars\AvatarsContract;
 use Humans\Avatars\Providers;
 use Humans\Avatars\UnableToFetchAvatar;
 
-class FailingAvatar implements AvatarsContract
+class FailingAvatars implements AvatarsContract
 {
     public function fetch(Providers\Provider ...$sources): Providers\Response
     {

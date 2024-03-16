@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Humans\Avatars\Tests\Unit\Fakes;
 
-use Humans\Avatars\Fakes\SuccessfulAvatar;
+use Humans\Avatars\Fakes\SuccessfulAvatars;
 use Humans\Avatars\Providers\Response;
 
 it('always returns a successful response', function () {
-    $avatars = new SuccessfulAvatar('contents', 'extension');
+    $avatars = new SuccessfulAvatars('contents', 'extension');
 
     $response = $avatars->fetch();
 

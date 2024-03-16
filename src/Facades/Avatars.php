@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Humans\Avatars\Facades;
 
-use Humans\Avatars\Fakes\FailingAvatar;
-use Humans\Avatars\Fakes\SuccessfulAvatar;
+use Humans\Avatars\Fakes\FailingAvatars;
+use Humans\Avatars\Fakes\SuccessfulAvatars;
 use Humans\Avatars\Providers\Provider;
 use Humans\Avatars\Providers\Response;
 use Illuminate\Support\Facades\Facade;
@@ -22,11 +22,11 @@ class Avatars extends Facade
 
     public static function fail()
     {
-        self::swap(new FailingAvatar);
+        self::swap(new FailingAvatars);
     }
 
     public static function pass(string $contents, string $extension)
     {
-        self::swap(new SuccessfulAvatar($contents, $extension));
+        self::swap(new SuccessfulAvatars($contents, $extension));
     }
 }
