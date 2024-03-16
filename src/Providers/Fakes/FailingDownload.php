@@ -15,6 +15,6 @@ class FailingDownload implements Provider
 
     public function download(): Response
     {
-        throw new FailingAvatarException("Could not download for the handle {$this->handle}");
+        throw new FailingAvatarException("Could not download the image for the handle [{$this->handle}]");
     }
 }
