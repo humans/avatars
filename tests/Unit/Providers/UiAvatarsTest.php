@@ -26,6 +26,23 @@ it('downloads the ui avatars photo', function () {
         ->extension->toBe('svg');
 });
 
+describe('options', function () {
+    test('format', function () {
+        Http::fake([
+            'ui-avatars.com/*' => Http::response('i am image', 200),
+        ]);
+
+        $options = UiAvatars\Options::new()->format('png');
+
+        $response = (new UiAvatars('Jazel Lim', $options))->download();
+
+        expect($response)
+            ->toBeInstanceOf(Providers\Response::class)
+            ->contents->toBe('i am image')
+            ->extension->toBe('png');
+    });
+});
+
 it('throws an exception if the ui avatars request fails', function () {
     Http::fake([
         'ui-avatars.com/*' => Http::response(status: 500),
