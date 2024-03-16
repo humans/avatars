@@ -12,6 +12,6 @@ class FailingAvatar implements AvatarsContract
 {
     public function fetch(Providers\Provider ...$sources): Providers\Response
     {
-        throw new UnableToFetchAvatar;
+        throw new UnableToFetchAvatar('Unable to fetch any of the avatars.');
     }
 }
