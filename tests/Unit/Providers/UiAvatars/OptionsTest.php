@@ -22,3 +22,19 @@ describe('format', function () {
         }
     });
 });
+
+describe('rounded', function () {
+    it('defaults to false', function () {
+        expect(new Options)->rounded->toBeFalse();
+    });
+
+    it('sets the value to true', function () {
+        $options = new Options;
+
+        expect($options)->rounded->toBeFalse();
+
+        $options->rounded();
+
+        expect($options)->rounded->toBeTrue();
+    });
+});

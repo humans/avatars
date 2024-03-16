@@ -13,6 +13,8 @@ class Options
      */
     public string $format = 'svg';
 
+    public bool $rounded = false;
+
     public static function new(): self
     {
         return new self;
@@ -31,6 +33,13 @@ class Options
         }
 
         $this->format = $format;
+
+        return $this;
+    }
+
+    public function rounded(): self
+    {
+        $this->rounded = true;
 
         return $this;
     }
